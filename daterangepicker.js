@@ -97,7 +97,7 @@
         if (typeof options.template !== 'string' && !(options.template instanceof $))
             options.template = '<div class="daterangepicker dropdown-menu">' +
                 '<div class="calendar left">' +
-                '<label style="padding:8px 0 0 8px">Từ ngày</label>' +
+                '<label class="date-from" style="padding:8px 0 0 8px">Từ ngày</label>' +
                 '<div class="daterangepicker_input">' +
                 '<input class="input-mini form-control" type="text" name="daterangepicker_start" value="" />' +
                 '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
@@ -109,7 +109,7 @@
                 '<div class="calendar-table"></div>' +
                 '</div>' +
                 '<div class="calendar right">' +
-                '<label style="padding:8px 0 0 8px">Đến ngày</label>' +
+                '<label class="date-to" style="padding:8px 0 0 8px">Đến ngày</label>' +
                 '<div class="daterangepicker_input">' +
                 '<input class="input-mini form-control" type="text" name="daterangepicker_end" value="" />' +
                 '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
@@ -382,6 +382,7 @@
             this.container.find('.calendar.left').addClass('single');
             this.container.find('.calendar.left').show();
             this.container.find('.calendar.right').hide();
+            this.container.find('.calendar.left .date-from').hide();
             this.container.find('.daterangepicker_input input, .daterangepicker_input > i').hide();
             if (this.timePicker) {
                 this.container.find('.ranges ul').hide();
