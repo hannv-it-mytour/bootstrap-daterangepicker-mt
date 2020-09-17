@@ -822,8 +822,10 @@
                         classes.push('off', 'disabled');
 
                     //highlight the currently selected start date
-                    if (calendar[row][col].format('YYYY-MM-DD') == this.startDate.format('YYYY-MM-DD') && (side == 'left' || this.singleDatePicker))
+                    if (calendar[row][col].format('YYYY-MM-DD') == this.startDate.format('YYYY-MM-DD') && (side == 'left' || this.singleDatePicker)) {
+                        classes.remove('off');
                         classes.push('active', 'start-date');
+                    }
 
                     //highlight the currently selected end date
                     if (this.endDate != null && calendar[row][col].format('YYYY-MM-DD') == this.endDate.format('YYYY-MM-DD') && (side == 'right' || this.singleDatePicker)) {
